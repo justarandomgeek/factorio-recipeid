@@ -1,0 +1,11 @@
+{
+  "name": "recipeid",
+  "version": "0.14.0",
+  "factorio_version": "0.14",
+  "title": "Recipe Universal ID Library",
+  "author": "justarandomgeek",
+  "homepage": "",
+  "contact": "justarandomgeek@gmail.com",
+  "description": "A library for that provides unique integer IDs for recipes.",
+  "dependencies": ["base >= 0.14.0"]
+}
