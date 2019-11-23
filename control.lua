@@ -1,3 +1,5 @@
+pcall(require,'__coverage__/coverage.lua')
+
 local crc32 = require "crc32"
 
 local function recipe_id(recipe)
