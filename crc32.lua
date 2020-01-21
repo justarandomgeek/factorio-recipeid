@@ -90,55 +90,9 @@ local CRC32 = {
 }
 
 -- ============================================================
-local function xor(a, b)
-  -- info("[ENTER]<xor()> a(%s) b(%s)", tostring(a), tostring(b));
-
-  local calc = 0    
-
-  for i = 32, 0, -1 do
-	local val = 2 ^ i
-	local aa = false
-	local bb = false
-
-	if a == 0 then
-	    calc = calc + b
-	    break
-	end
-
-	if b == 0 then
-	    calc = calc + a
-	    break
-	end
-
-	if a >= val then
-	    aa = true
-	    a = a - val
-	end
-
-	if b >= val then
-	    bb = true
-	    b = b - val
-	end
-
-	if not (aa and bb) and (aa or bb) then
-      calc = calc + val
-	end
-  end -- end for each bit value in the integer.
-
-  return calc
-end
-
--- ============================================================
-local function lshift(num, left)
-    local res = num * (2 ^ left)
-    return res % (2 ^ 32)
-end
-
--- ============================================================
-local function rshift(num, right)
-    local res = num / (2 ^ right)
-    return math.floor(res)
-end
+local xor = bit32.bxor
+local lshift = bit32.lshift
+local rshift = bit32.rshift
 
 -- =============================================================
 -- Export a map containing this one function.
