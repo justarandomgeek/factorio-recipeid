@@ -1,6 +1,3 @@
-if script.active_mods['coverage'] then require('__coverage__/coverage.lua') end
-if script.active_mods['debugadapter'] then require('__debugadapter__/debugadapter.lua') end
-
 local crc32 = require "crc32"
 
 local function recipe_id(recipe)
